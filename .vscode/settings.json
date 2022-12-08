@@ -1,2 +1,5 @@
 {
+    "files.autoSave": "onWindowChange",
+    "editor.fontSize": 14,
+    "editor.lineHeight": 35
 }

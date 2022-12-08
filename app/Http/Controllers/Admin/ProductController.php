@@ -21,17 +21,17 @@ class ProductController extends Controller
      */
     public function index()
     {
-       
+
 
         if(request()->ajax())
-        {  
+        {
             $query = Product::with(['user','category']);
             return DataTables::of($query)
                 ->addColumn('action', function($item) {
                     return '
                         <div class= "btn-group">
                             <div class= "dropdown">
-                                <button class="btn btn-primay dropdown-toggle mr-1 mb-1" 
+                                <button class="btn btn-primay dropdown-toggle mr-1 mb-1"
                                     type="button"
                                     data-toggle="dropdown">
                                     Aksi
@@ -51,7 +51,7 @@ class ProductController extends Controller
                         </div>
                     ';
                 })
-                ->rawColumns(['action']) 
+                ->rawColumns(['action'])
                 ->make();
         }
 
@@ -60,7 +60,7 @@ class ProductController extends Controller
 
 
     public function discount()
-    {   
+    {
         $products = Product::with(['user', 'category'])->get();
 
         return view('pages.admin.product.discount', [
@@ -98,7 +98,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {
         $users = User::all();
         $categories = Category::all();
 
@@ -123,7 +123,7 @@ class ProductController extends Controller
         Product::create($data);
 
         return redirect()->route('product.index');
-        
+
     }
 
     /**
@@ -156,7 +156,7 @@ class ProductController extends Controller
         ]);
     }
 
-    
+
 
     /**
      * Update the specified resource in storage.

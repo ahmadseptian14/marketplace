@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'Ulasan Produk')
-    
+
 @section('content')
 <div class="section-content section-dashboard-home" data-aos="fade-up">
     <div class="container-fluid">
@@ -39,9 +39,9 @@
                                         <td>{{$review->comment}}</td>
                                     </tr>
                                     @empty
-                                        
+
                                     @endforelse
-                                    
+
                                 </tbody>
                             </table>
                         </div>
